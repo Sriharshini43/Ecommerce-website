@@ -1,11 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>shopping-cart</groupId>
 	<artifactId>shopping-cart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+
 	<name>Shopping Cart</name>
-	<description>A Shopping Cart Project in Java by Bitter Code</description>
+	<description>A Shopping Cart Project in Java</description>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -19,8 +24,11 @@
 				<directory>WebContent</directory>
 			</resource>
 		</resources>
+
 		<plugins>
+			<!-- Compiler Plugin -->
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
@@ -28,56 +36,57 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+			<!-- WAR Plugin -->
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.3</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
-			<plugin>
-			   <groupId>com.google.cloud.tools</groupId>
-			   <artifactId>appengine-maven-plugin</artifactId>
-			   <version>2.4.4</version>
-			   <configuration>
-                   <deploy.projectId>GCLOUD_CONFIG</deploy.projectId>
-                   <deploy.version>GCLOUD_CONFIG</deploy.version>
-               </configuration>
-            </plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
+		<!-- MySQL Connector -->
 		<dependency>
 		    <groupId>com.mysql</groupId>
 		    <artifactId>mysql-connector-j</artifactId>
 		    <version>8.0.33</version>
         </dependency>
 
+		<!-- Servlet API -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
         
+        <!-- Mail API -->
         <dependency>
 		    <groupId>com.sun.mail</groupId>
 		    <artifactId>javax.mail</artifactId>
 		    <version>1.6.2</version>	
         </dependency>
+
+        <!-- Google Guava -->
         <dependency>
 	        <groupId>com.google.guava</groupId>
 	        <artifactId>guava</artifactId>
-	        <version>30.1-jre</version> <!-- Use the latest version -->
-       </dependency>
+	        <version>30.1-jre</version>
+        </dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api -->
+		<!-- JAX-WS API -->
 		<dependency>
 			<groupId>javax.xml.ws</groupId>
 			<artifactId>jaxws-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
 		
+		<!-- Commons Codec -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
