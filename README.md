@@ -28,6 +28,6 @@ MySql
 ** How to Run : 1) Clone the Repository and open the folder in eclipse.
                 2) Add Tomcat Server.
                 3) Update Database Credentials in application.properties file.
-                4) Run MySql Commands in Mysql WorkBench.
+                4) Run MySql Commands present in databses folder in your system Mysql WorkBench.
                 5) Select Project and Right click select Run and then select Started Tomcat Server.
                 6) Project will be opened in Browser.
